@@ -7,11 +7,11 @@ This repository contain code on "Optimal Planning of Renewable-Based Mining Micr
 
 Main_Run_All_Algs_HPC.py". It takes 5 input variables as follows.
 
---nPop: population size for MOEA
---nFeval: Function evaluation
---seed_no: Seed number, int number between 0 and 30, pre-assigned for our experiments.
---DERFlag: DER combination flag, 1 for no battery and 2 for with battery cases, and 
---AlgFlag: Algorithm flag, int number between 1 and 6, these algorithms are from Pymoo.
+* --nPop: population size for MOEA
+* --nFeval: Function evaluation
+* --seed_no: Seed number, int number between 0 and 30, pre-assigned for our experiments.
+* --DERFlag: DER combination flag, 1 for no battery and 2 for with battery cases, and 
+* --AlgFlag: Algorithm flag, int number between 1 and 6, these algorithms are from Pymoo.
  
 Example:
 ```
