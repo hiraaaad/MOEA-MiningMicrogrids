@@ -411,8 +411,8 @@ def UNSGA3_run(nPop, nFeval, DesVar, seed_no):
     return Sol
 
 nPop = 100
-nFeval = 100000
-DesVar = 1
+nFeval = 10000
+DesVar = 2
 
 seed_vect = [4,34,42,76,	87,121,146,170,200,240,270,319,344,542,617,625,706,814,
              	938,	1281,1748,1846,2206,3065,3383,3742,7253,12697,13391,15760,128765]
@@ -420,81 +420,111 @@ seed_vect = [4,34,42,76,	87,121,146,170,200,240,270,319,344,542,617,625,706,814,
 Alg_Flag =  1    # NSGAII: 1, AGE-MOEA: 2, SMS-EMOA: 3, AGE-MOEA2: 4, NSGA-III: 5, UNSGAIII: 6, C-TAEA: 7
 
 
-for seed_no in range(len(seed_vect)):
-    print('Seed_no = {}'.format(seed_no))
+# for seed_no in range(len(seed_vect)):
+#     print('Seed_no = {}'.format(seed_no))
+#     if Alg_Flag==1:    
+#         Solution = NSGAII_run(nPop, nFeval, DesVar, seed_vect[seed_no])
+#         Pareto_Sol = Solution[0]
+#         Gen_Sol = Solution[1]
+#         if DesVar==1:
+#             Pareto_Sol.to_csv("./Results//Pareto_NSGAII_noBAT_seedno_{}.csv".format(seed_no))
+#             Gen_Sol.to_csv("./Results//AllPop_NSGAII_noBAT_seedno_{}.csv".format(seed_no))
+#         else:
+#             Pareto_Sol.to_csv("./Results_BAT//Pareto_NSGAII_BAT_seedno_{}.csv".format(seed_no))
+#             Gen_Sol.to_csv("./Results_BAT//AllPop_NSGAII_BAT_seedno_{}.csv".format(seed_no))
+
+#     elif Alg_Flag==2:    
+#         Solution = AGEMOEA_run(nPop, nFeval, DesVar, seed_vect[seed_no])
+#         Pareto_Sol = Solution[0]
+#         Gen_Sol = Solution[1]
+#         if DesVar==1:
+#             Pareto_Sol.to_csv("./Results//Pareto_AGEMOEA_noBAT_seedno_{}.csv".format(seed_no))
+#             Gen_Sol.to_csv("./Results//AllPop_AGEMOEA_noBAT_seedno_{}.csv".format(seed_no))
+#         else:
+#             Pareto_Sol.to_csv("./Results_BAT//Pareto_AGEMOEA_BAT_seedno_{}.csv".format(seed_no))
+#             Gen_Sol.to_csv("./Results_BAT//AllPop_AGEMOEA_BAT_seedno_{}.csv".format(seed_no))
+
+#     elif Alg_Flag==3:    
+#         Solution = SMSEMOA_run(nPop, nFeval, DesVar, seed_vect[seed_no])
+#         Pareto_Sol = Solution[0]
+#         Gen_Sol = Solution[1]
+#         if DesVar==1:
+#             Pareto_Sol.to_csv("./Results//Pareto_SMSEMOA_noBAT_seedno_{}.csv".format(seed_no))
+#             Gen_Sol.to_csv("./Results//AllPop_SMSEMOA_noBAT_seedno_{}.csv".format(seed_no))
+#         else:
+#             Pareto_Sol.to_csv("./Results_BAT//Pareto_SMSEMOA_BAT_seedno_{}.csv".format(seed_no))
+#             Gen_Sol.to_csv("./Results_BAT//AllPop_SMSEMOA_BAT_seedno_{}.csv".format(seed_no))
+            
+#     elif Alg_Flag==4:    
+#         Solution = AGEMOEA2_run(nPop, nFeval, DesVar, seed_vect[seed_no])
+#         Pareto_Sol = Solution[0]
+#         Gen_Sol = Solution[1]
+#         if DesVar==1:
+#             Pareto_Sol.to_csv("./Results//Pareto_AGEMOEA2_noBAT_seedno_{}.csv".format(seed_no))
+#             Gen_Sol.to_csv("./Results//AllPop_AGEMOEA2_noBAT_seedno_{}.csv".format(seed_no))
+#         else:
+#             Pareto_Sol.to_csv("./Results_BAT//Pareto_AGEMOEA2_BAT_seedno_{}.csv".format(seed_no))
+#             Gen_Sol.to_csv("./Results_BAT//AllPop_AGEMOEA2_BAT_seedno_{}.csv".format(seed_no))
+
+#     elif Alg_Flag==5:    
+#         Solution = NSGA3_run(nPop, nFeval, DesVar, seed_vect[seed_no])
+#         Pareto_Sol = Solution[0]
+#         Gen_Sol = Solution[1]
+#         if DesVar==1:
+#             Pareto_Sol.to_csv("./Results//Pareto_NSGA3_noBAT_seedno_{}.csv".format(seed_no))
+#             Gen_Sol.to_csv("./Results//AllPop_NSGA3_noBAT_seedno_{}.csv".format(seed_no))
+#         else:
+#             Pareto_Sol.to_csv("./Results_BAT//Pareto_NSGA3_BAT_seedno_{}.csv".format(seed_no))
+#             Gen_Sol.to_csv("./Results_BAT//AllPop_NSGA3_BAT_seedno_{}.csv".format(seed_no))
+    
+#     elif Alg_Flag==6:    
+#         Solution = UNSGA3_run(nPop, nFeval, DesVar, seed_vect[seed_no])
+#         Pareto_Sol = Solution[0]
+#         Gen_Sol = Solution[1]
+#         if DesVar==1:
+#             Pareto_Sol.to_csv("./Results//Pareto_UNSGA3_noBAT_seedno_{}.csv".format(seed_no))
+#             Gen_Sol.to_csv("./Results//AllPop_UNSGA3_noBAT_seedno_{}.csv".format(seed_no))
+#         else:
+#             Pareto_Sol.to_csv("./Results_BAT//Pareto_UNSGA3_BAT_seedno_{}.csv".format(seed_no))
+#             Gen_Sol.to_csv("./Results_BAT//AllPop_UNSGA3_BAT_seedno_{}.csv".format(seed_no))
+
+#     elif Alg_Flag==7:    
+#         Solution = CTAEA_run(nPop, nFeval, DesVar, seed_vect[seed_no])
+#         Pareto_Sol = Solution[0]
+#         Gen_Sol = Solution[1]
+#         if DesVar==1:
+#             Pareto_Sol.to_csv("./Results//Pareto_CTAEA_noBAT_seedno_{}.csv".format(seed_no))
+#             Gen_Sol.to_csv("./Results//AllPop_CTAEA_noBAT_seedno_{}.csv".format(seed_no))
+#         else:
+#             Pareto_Sol.to_csv("./Results_BAT//Pareto_CTAEA_BAT_seedno_{}.csv".format(seed_no))
+#             Gen_Sol.to_csv("./Results_BAT//AllPop_CTAEA_BAT_seedno_{}.csv".format(seed_no))
+
+import time
+
+for Alg_Flag in range(7):
+    print('Alg_Flag = {}'.format(Alg_Flag))
+    start = time.process_time()
+    
     if Alg_Flag==1:    
-        Solution = NSGAII_run(nPop, nFeval, DesVar, seed_vect[seed_no])
-        Pareto_Sol = Solution[0]
-        Gen_Sol = Solution[1]
-        if DesVar==1:
-            Pareto_Sol.to_csv("./Results//Pareto_NSGAII_noBAT_seedno_{}.csv".format(seed_no))
-            Gen_Sol.to_csv("./Results//AllPop_NSGAII_noBAT_seedno_{}.csv".format(seed_no))
-        else:
-            Pareto_Sol.to_csv("./Results_BAT//Pareto_NSGAII_BAT_seedno_{}.csv".format(seed_no))
-            Gen_Sol.to_csv("./Results_BAT//AllPop_NSGAII_BAT_seedno_{}.csv".format(seed_no))
-
+        Solution = NSGAII_run(nPop, nFeval, DesVar, seed_vect[0])
+        
     elif Alg_Flag==2:    
-        Solution = AGEMOEA_run(nPop, nFeval, DesVar, seed_vect[seed_no])
-        Pareto_Sol = Solution[0]
-        Gen_Sol = Solution[1]
-        if DesVar==1:
-            Pareto_Sol.to_csv("./Results//Pareto_AGEMOEA_noBAT_seedno_{}.csv".format(seed_no))
-            Gen_Sol.to_csv("./Results//AllPop_AGEMOEA_noBAT_seedno_{}.csv".format(seed_no))
-        else:
-            Pareto_Sol.to_csv("./Results_BAT//Pareto_AGEMOEA_BAT_seedno_{}.csv".format(seed_no))
-            Gen_Sol.to_csv("./Results_BAT//AllPop_AGEMOEA_BAT_seedno_{}.csv".format(seed_no))
-
+        Solution = AGEMOEA_run(nPop, nFeval, DesVar, seed_vect[0])
+        
     elif Alg_Flag==3:    
-        Solution = SMSEMOA_run(nPop, nFeval, DesVar, seed_vect[seed_no])
-        Pareto_Sol = Solution[0]
-        Gen_Sol = Solution[1]
-        if DesVar==1:
-            Pareto_Sol.to_csv("./Results//Pareto_SMSEMOA_noBAT_seedno_{}.csv".format(seed_no))
-            Gen_Sol.to_csv("./Results//AllPop_SMSEMOA_noBAT_seedno_{}.csv".format(seed_no))
-        else:
-            Pareto_Sol.to_csv("./Results_BAT//Pareto_SMSEMOA_BAT_seedno_{}.csv".format(seed_no))
-            Gen_Sol.to_csv("./Results_BAT//AllPop_SMSEMOA_BAT_seedno_{}.csv".format(seed_no))
+        Solution = SMSEMOA_run(nPop, nFeval, DesVar, seed_vect[0])
             
     elif Alg_Flag==4:    
-        Solution = AGEMOEA2_run(nPop, nFeval, DesVar, seed_vect[seed_no])
-        Pareto_Sol = Solution[0]
-        Gen_Sol = Solution[1]
-        if DesVar==1:
-            Pareto_Sol.to_csv("./Results//Pareto_AGEMOEA2_noBAT_seedno_{}.csv".format(seed_no))
-            Gen_Sol.to_csv("./Results//AllPop_AGEMOEA2_noBAT_seedno_{}.csv".format(seed_no))
-        else:
-            Pareto_Sol.to_csv("./Results_BAT//Pareto_AGEMOEA2_BAT_seedno_{}.csv".format(seed_no))
-            Gen_Sol.to_csv("./Results_BAT//AllPop_AGEMOEA2_BAT_seedno_{}.csv".format(seed_no))
-
+        Solution = AGEMOEA2_run(nPop, nFeval, DesVar, seed_vect[0])
+        
     elif Alg_Flag==5:    
-        Solution = NSGA3_run(nPop, nFeval, DesVar, seed_vect[seed_no])
-        Pareto_Sol = Solution[0]
-        Gen_Sol = Solution[1]
-        if DesVar==1:
-            Pareto_Sol.to_csv("./Results//Pareto_NSGA3_noBAT_seedno_{}.csv".format(seed_no))
-            Gen_Sol.to_csv("./Results//AllPop_NSGA3_noBAT_seedno_{}.csv".format(seed_no))
-        else:
-            Pareto_Sol.to_csv("./Results_BAT//Pareto_NSGA3_BAT_seedno_{}.csv".format(seed_no))
-            Gen_Sol.to_csv("./Results_BAT//AllPop_NSGA3_BAT_seedno_{}.csv".format(seed_no))
-    
+        Solution = NSGA3_run(nPop, nFeval, DesVar, seed_vect[0])
+        
     elif Alg_Flag==6:    
-        Solution = UNSGA3_run(nPop, nFeval, DesVar, seed_vect[seed_no])
-        Pareto_Sol = Solution[0]
-        Gen_Sol = Solution[1]
-        if DesVar==1:
-            Pareto_Sol.to_csv("./Results//Pareto_UNSGA3_noBAT_seedno_{}.csv".format(seed_no))
-            Gen_Sol.to_csv("./Results//AllPop_UNSGA3_noBAT_seedno_{}.csv".format(seed_no))
-        else:
-            Pareto_Sol.to_csv("./Results_BAT//Pareto_UNSGA3_BAT_seedno_{}.csv".format(seed_no))
-            Gen_Sol.to_csv("./Results_BAT//AllPop_UNSGA3_BAT_seedno_{}.csv".format(seed_no))
-
+        Solution = UNSGA3_run(nPop, nFeval, DesVar, seed_vect[0])
+        
     elif Alg_Flag==7:    
-        Solution = CTAEA_run(nPop, nFeval, DesVar, seed_vect[seed_no])
-        Pareto_Sol = Solution[0]
-        Gen_Sol = Solution[1]
-        if DesVar==1:
-            Pareto_Sol.to_csv("./Results//Pareto_CTAEA_noBAT_seedno_{}.csv".format(seed_no))
-            Gen_Sol.to_csv("./Results//AllPop_CTAEA_noBAT_seedno_{}.csv".format(seed_no))
-        else:
-            Pareto_Sol.to_csv("./Results_BAT//Pareto_CTAEA_BAT_seedno_{}.csv".format(seed_no))
-            Gen_Sol.to_csv("./Results_BAT//AllPop_CTAEA_BAT_seedno_{}.csv".format(seed_no))
+        Solution = CTAEA_run(nPop, nFeval, DesVar, seed_vect[0])
+
+    print(time.process_time() - start)
+        
